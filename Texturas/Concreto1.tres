@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://decty8h2sab68"]
+
+[ext_resource type="Texture2D" uid="uid://dnhhp8af467vl" path="res://Texturas/posters-ladrillo-marron-pared-textura.jpg.jpg" id="1_iy7en"]
+
+[resource]
+albedo_texture = ExtResource("1_iy7en")
+roughness = 0.45
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
