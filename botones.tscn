@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://botones.gd" id="1_gr8n5"]
 [ext_resource type="FontFile" uid="uid://bvj35002htggu" path="res://interfas/Buttons/fondos/Free Pixel Art Forest/PNG/letras/PixelMiddle.ttf" id="1_tx631"]
-[ext_resource type="Texture2D" uid="uid://bnau46h20xjig" path="res://logo.png" id="2_eqf2f"]
 [ext_resource type="PackedScene" uid="uid://bmg7pl42ksnx0" path="res://inter1.tscn" id="2_i7ctg"]
+[ext_resource type="Texture2D" uid="uid://caohg0nfo888o" path="res://logo1.png" id="2_kjlui"]
 [ext_resource type="AudioStream" uid="uid://dj7o55fn3q0wh" path="res://interfas/Buttons/fondos/Free Pixel Art Forest/Preview/DOS-88-Flow-State.ogg" id="4_llyic"]
 [ext_resource type="Script" path="res://ExitButton.gd" id="4_m3jd8"]
 [ext_resource type="Script" path="res://AudioStreamPlayer2D.gd" id="5_ypi0l"]
@@ -41,7 +41,7 @@ grow_vertical = 2
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("2_eqf2f")
+texture = ExtResource("2_kjlui")
 expand_mode = 5
 stretch_mode = 5
 flip_h = true
