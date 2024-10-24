@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bya17iut7c355"
+path="res://.godot/imported/Sonido-de-botón-para-tus-videos.ogg-39d39e57fa9637cc9dd814949c6864b0.oggvorbisstr"
+
+[deps]
+
+source_file="res://interfas/Buttons/fondos/Free Pixel Art Forest/Preview/Sonido-de-botón-para-tus-videos.ogg"
+dest_files=["res://.godot/imported/Sonido-de-botón-para-tus-videos.ogg-39d39e57fa9637cc9dd814949c6864b0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

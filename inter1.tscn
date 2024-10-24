@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmg7pl42ksnx0"]
+
+[ext_resource type="Texture2D" uid="uid://43wty3p71kkm" path="res://interfas/Buttons/fondos/Free Pixel Art Forest/Preview/Background.png" id="1_313sg"]
+[ext_resource type="Script" path="res://inter1.gd" id="1_uxdcc"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_uxdcc")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+metadata/pl = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 1
+position = Vector2(2738.92, 2794.42)
+scale = Vector2(3.09339, 3.09906)
+texture = ExtResource("1_313sg")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 3000)

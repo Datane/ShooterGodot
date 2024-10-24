@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dld036bmkfrom"
+path="res://.godot/imported/naturePack_018.obj-71fdba17133fd9217881ef0c78b8c154.mesh"
+
+[deps]
+
+files=["res://.godot/imported/naturePack_018.obj-71fdba17133fd9217881ef0c78b8c154.mesh"]
+
+source_file="res://esenario/GodotActionRPG-Assets/Models/Environment/naturePack_018.obj"
+dest_files=["res://.godot/imported/naturePack_018.obj-71fdba17133fd9217881ef0c78b8c154.mesh", "res://.godot/imported/naturePack_018.obj-71fdba17133fd9217881ef0c78b8c154.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

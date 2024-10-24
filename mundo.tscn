@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnie15rb2i5cm"]
+
+[ext_resource type="ArrayMesh" uid="uid://drll2t8xdxk4u" path="res://esenario/GodotActionRPG-Assets/Models/Environment/plataforma.obj" id="1_x1w07"]
+[ext_resource type="PackedScene" uid="uid://buts8j1imqu5g" path="res://persoanej.tscn" id="3_u4k7i"]
+[ext_resource type="ArrayMesh" uid="uid://csu70b74qtur" path="res://esenario/GodotActionRPG-Assets/Models/Environment/arbol.obj" id="6_yimpv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i17tx"]
+data = PackedVector3Array(0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8rr20"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7oa56"]
+
+[sub_resource type="Sky" id="Sky_dyx21"]
+
+[sub_resource type="Environment" id="Environment_etpjj"]
+background_mode = 2
+sky = SubResource("Sky_dyx21")
+sky_rotation = Vector3(1.77675, 0, 0)
+ambient_light_source = 2
+
+[node name="Mundo" type="Node3D"]
+
+[node name="NaturePack001" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -150, 0, 150)
+mesh = ExtResource("1_x1w07")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NaturePack001"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NaturePack001/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_i17tx")
+
+[node name="arboles" type="Node" parent="."]
+
+[node name="arbolng" type="MeshInstance3D" parent="arboles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8032, 0.3, -4.00321)
+mesh = ExtResource("6_yimpv")
+skeleton = NodePath("../..")
+
+[node name="arbol naranja" type="StaticBody3D" parent="arboles/arbolng"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arboles/arbolng/arbol naranja"]
+transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2, 1.40884, 3.73962, -1.19831)
+shape = SubResource("BoxShape3D_8rr20")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="arboles/arbolng/arbol naranja"]
+transform = Transform3D(0.2, 0, 0, 0, 2, 0, 0, 0, 0.2, 1.69435, 1.00421, -1.00124)
+shape = SubResource("BoxShape3D_7oa56")
+
+[node name="personaje" parent="." instance=ExtResource("3_u4k7i")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.630434, -0.744897, -0.21836, 0.219741, -0.441055, 0.870163, -0.744491, 0.500598, 0.441741, 2.01458, 80.0037, 21.9457)
+light_energy = 3.444
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 3.222
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_etpjj")
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8032, 0.3, -4.00321)

@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://fbaxqqe3bvgu"]
+
+[ext_resource type="Script" path="res://botones.gd" id="1_gr8n5"]
+[ext_resource type="FontFile" uid="uid://bvj35002htggu" path="res://interfas/Buttons/fondos/Free Pixel Art Forest/PNG/letras/PixelMiddle.ttf" id="1_tx631"]
+[ext_resource type="Texture2D" uid="uid://bnau46h20xjig" path="res://logo.png" id="2_eqf2f"]
+[ext_resource type="PackedScene" uid="uid://bmg7pl42ksnx0" path="res://inter1.tscn" id="2_i7ctg"]
+[ext_resource type="AudioStream" uid="uid://dj7o55fn3q0wh" path="res://interfas/Buttons/fondos/Free Pixel Art Forest/Preview/DOS-88-Flow-State.ogg" id="4_llyic"]
+[ext_resource type="Script" path="res://ExitButton.gd" id="4_m3jd8"]
+[ext_resource type="Script" path="res://AudioStreamPlayer2D.gd" id="5_ypi0l"]
+[ext_resource type="AudioStream" uid="uid://bya17iut7c355" path="res://interfas/Buttons/fondos/Free Pixel Art Forest/Preview/Sonido-de-botón-para-tus-videos.ogg" id="8_lsmid"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+script = ExtResource("1_gr8n5")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -132.0
+offset_right = 144.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_eqf2f")
+expand_mode = 5
+stretch_mode = 5
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Button" type="Button" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_tx631")
+theme_override_font_sizes/font_size = 150
+text = "Jugar"
+flat = true
+
+[node name="ExitButton" type="Button" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.152941, 0.356863, 1, 1)
+theme_override_fonts/font = ExtResource("1_tx631")
+theme_override_font_sizes/font_size = 80
+text = "salir"
+flat = true
+script = ExtResource("4_m3jd8")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_i7ctg")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_llyic")
+autoplay = true
+bus = &"New Bus"
+script = ExtResource("5_ypi0l")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -59.0
+offset_right = 262.0
+offset_bottom = 41.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_tx631")
+theme_override_font_sizes/font_size = 30
+text = "Hecho: 
+version:0.0.1"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_lsmid")
+
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
