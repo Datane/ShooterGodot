@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnie15rb2i5cm"]
+[gd_scene load_steps=10 format=3 uid="uid://bnie15rb2i5cm"]
 
 [ext_resource type="ArrayMesh" uid="uid://drll2t8xdxk4u" path="res://esenario/GodotActionRPG-Assets/Models/Environment/plataforma.obj" id="1_x1w07"]
 [ext_resource type="PackedScene" uid="uid://buts8j1imqu5g" path="res://persoanej.tscn" id="3_u4k7i"]
@@ -11,13 +11,18 @@ data = PackedVector3Array(0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7oa56"]
 
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gpmyo"]
+
 [sub_resource type="Sky" id="Sky_dyx21"]
+sky_material = SubResource("PhysicalSkyMaterial_gpmyo")
 
 [sub_resource type="Environment" id="Environment_etpjj"]
 background_mode = 2
+background_color = Color(0.922659, 0.905452, 0.931026, 1)
 sky = SubResource("Sky_dyx21")
-sky_rotation = Vector3(1.77675, 0, 0)
+sky_rotation = Vector3(-0.0122173, 0, 0)
 ambient_light_source = 2
+ambient_light_energy = 2.4
 
 [node name="Mundo" type="Node3D"]
 
@@ -51,9 +56,10 @@ shape = SubResource("BoxShape3D_7oa56")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.630434, -0.744897, -0.21836, 0.219741, -0.441055, 0.870163, -0.744491, 0.500598, 0.441741, 2.01458, 80.0037, 21.9457)
-light_energy = 3.444
+light_energy = 5.822
 light_indirect_energy = 3.0
 light_volumetric_fog_energy = 3.222
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_etpjj")
