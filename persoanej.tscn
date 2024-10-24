@@ -19,4 +19,4 @@ mesh = SubResource("CapsuleMesh_e2gme")
 shape = SubResource("CapsuleShape3D_jwtpg")
 
 [node name="Camera3D" type="Camera3D" parent="personaje"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483075, -0.480543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483075, 0.221005)

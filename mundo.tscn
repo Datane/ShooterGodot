@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnie15rb2i5cm"]
+[gd_scene load_steps=14 format=3 uid="uid://bnie15rb2i5cm"]
 
+[ext_resource type="Material" uid="uid://dhbqo7olmtnxa" path="res://Texturas/Grass.tres" id="1_riy0f"]
 [ext_resource type="ArrayMesh" uid="uid://drll2t8xdxk4u" path="res://esenario/GodotActionRPG-Assets/Models/Environment/plataforma.obj" id="1_x1w07"]
 [ext_resource type="PackedScene" uid="uid://buts8j1imqu5g" path="res://persoanej.tscn" id="3_u4k7i"]
+[ext_resource type="Material" uid="uid://decty8h2sab68" path="res://Texturas/Concreto1.tres" id="4_mm1ey"]
 [ext_resource type="ArrayMesh" uid="uid://csu70b74qtur" path="res://esenario/GodotActionRPG-Assets/Models/Environment/arbol.obj" id="6_yimpv"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i17tx"]
@@ -24,42 +26,69 @@ sky_rotation = Vector3(-0.0122173, 0, 0)
 ambient_light_source = 2
 ambient_light_energy = 2.4
 
+[sub_resource type="BoxMesh" id="BoxMesh_rp8k3"]
+size = Vector3(300, 5, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_204x3"]
+data = PackedVector3Array(-150, 2.5, 0.5, 150, 2.5, 0.5, -150, -2.5, 0.5, 150, 2.5, 0.5, 150, -2.5, 0.5, -150, -2.5, 0.5, 150, 2.5, -0.5, -150, 2.5, -0.5, 150, -2.5, -0.5, -150, 2.5, -0.5, -150, -2.5, -0.5, 150, -2.5, -0.5, 150, 2.5, 0.5, 150, 2.5, -0.5, 150, -2.5, 0.5, 150, 2.5, -0.5, 150, -2.5, -0.5, 150, -2.5, 0.5, -150, 2.5, -0.5, -150, 2.5, 0.5, -150, -2.5, -0.5, -150, 2.5, 0.5, -150, -2.5, 0.5, -150, -2.5, -0.5, 150, 2.5, 0.5, -150, 2.5, 0.5, 150, 2.5, -0.5, -150, 2.5, 0.5, -150, 2.5, -0.5, 150, 2.5, -0.5, -150, -2.5, 0.5, 150, -2.5, 0.5, -150, -2.5, -0.5, 150, -2.5, 0.5, 150, -2.5, -0.5, -150, -2.5, -0.5)
+
 [node name="Mundo" type="Node3D"]
 
-[node name="NaturePack001" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -150, 0, 150)
+[node name="Plano" type="MeshInstance3D" parent="."]
+transform = Transform3D(21.5723, 0, 0, 0, 1, 0, 0, 0, 31.6444, 0, 0, 0)
+material_override = ExtResource("1_riy0f")
 mesh = ExtResource("1_x1w07")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NaturePack001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Plano"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NaturePack001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plano/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_i17tx")
 
 [node name="arboles" type="Node" parent="."]
 
-[node name="arbolng" type="MeshInstance3D" parent="arboles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8032, 0.3, -4.00321)
+[node name="arbol" type="MeshInstance3D" parent="arboles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.235, 0.3, -42.1768)
 mesh = ExtResource("6_yimpv")
 skeleton = NodePath("../..")
 
-[node name="arbol naranja" type="StaticBody3D" parent="arboles/arbolng"]
+[node name="arbol naranja" type="StaticBody3D" parent="arboles/arbol"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="arboles/arbolng/arbol naranja"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arboles/arbol/arbol naranja"]
 transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2, 1.40884, 3.73962, -1.19831)
 shape = SubResource("BoxShape3D_8rr20")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="arboles/arbolng/arbol naranja"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="arboles/arbol/arbol naranja"]
 transform = Transform3D(0.2, 0, 0, 0, 2, 0, 0, 0, 0.2, 1.69435, 1.00421, -1.00124)
 shape = SubResource("BoxShape3D_7oa56")
 
 [node name="personaje" parent="." instance=ExtResource("3_u4k7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.609, 0, -48.899)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.630434, -0.744897, -0.21836, 0.219741, -0.441055, 0.870163, -0.744491, 0.500598, 0.441741, 2.01458, 80.0037, 21.9457)
-light_energy = 5.822
+transform = Transform3D(-0.630434, -0.744897, -0.21836, 0.145457, -0.389685, 0.909389, -0.762493, 0.541548, 0.354021, 2.01458, 80.0037, 21.9457)
+light_energy = 6.015
 light_indirect_energy = 3.0
 light_volumetric_fog_energy = 3.222
 shadow_enabled = true
+shadow_bias = 10.0
+shadow_normal_bias = 10.0
+shadow_opacity = 0.95
+shadow_blur = 0.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_etpjj")
+
+[node name="Paredes" type="Node" parent="."]
+
+[node name="Node3D" type="Node3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.82169)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(0.221235, 0, 0, 0, 1.47192, 0, 0, 0, 3.35628, 32.3141, 3.86758, -96.4089)
+material_override = ExtResource("4_mm1ey")
+mesh = SubResource("BoxMesh_rp8k3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Paredes/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_204x3")
