@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnie15rb2i5cm"]
+[gd_scene load_steps=11 format=3 uid="uid://bnie15rb2i5cm"]
 
 [ext_resource type="ArrayMesh" uid="uid://drll2t8xdxk4u" path="res://esenario/GodotActionRPG-Assets/Models/Environment/plataforma.obj" id="1_x1w07"]
 [ext_resource type="PackedScene" uid="uid://buts8j1imqu5g" path="res://persoanej.tscn" id="3_u4k7i"]
+[ext_resource type="PackedScene" uid="uid://dr3y0425jpkes" path="res://menupausa.tscn" id="4_07dbf"]
 [ext_resource type="ArrayMesh" uid="uid://csu70b74qtur" path="res://esenario/GodotActionRPG-Assets/Models/Environment/arbol.obj" id="6_yimpv"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i17tx"]
@@ -63,3 +64,5 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_etpjj")
+
+[node name="Node" parent="." instance=ExtResource("4_07dbf")]

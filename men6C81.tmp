@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr3y0425jpkes"]
+
+[ext_resource type="Script" path="res://Node.gd" id="1_q2nvo"]
+
+[node name="Node" type="CanvasLayer"]
+process_mode = 3
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
+script = ExtResource("1_q2nvo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.06, 0.06, 0.25098)
