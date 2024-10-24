@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr3y0425jpkes"]
+[gd_scene load_steps=3 format=3 uid="uid://dr3y0425jpkes"]
 
 [ext_resource type="Script" path="res://Node.gd" id="1_q2nvo"]
+[ext_resource type="AudioStream" uid="uid://bya17iut7c355" path="res://interfas/Buttons/fondos/Free Pixel Art Forest/Preview/Sonido-de-botón-para-tus-videos.ogg" id="2_vky0s"]
 
 [node name="Node" type="CanvasLayer"]
 process_mode = 3
@@ -54,6 +55,7 @@ layout_mode = 2
 text = "Ajustes"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Salir al menu"
 
@@ -62,4 +64,9 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Salir del juego"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vky0s")
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
