@@ -16,5 +16,5 @@ void fragment() {
 	ALBEDO = mix(color, color2, UV.y);
 	 if (!FRONT_FACING) {
 		NORMAL  = -NORMAL;
-		}
-		}
+	}
+}
