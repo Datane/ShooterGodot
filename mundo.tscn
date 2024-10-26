@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://bnie15rb2i5cm"]
+[gd_scene load_steps=16 format=3 uid="uid://bnie15rb2i5cm"]
 
 [ext_resource type="Script" path="res://mundo.gd" id="1_vahin"]
 [ext_resource type="PackedScene" uid="uid://buts8j1imqu5g" path="res://persoanej.tscn" id="3_u4k7i"]
 [ext_resource type="ArrayMesh" uid="uid://cnkfvxpjbwdbf" path="res://Pasto/mesh.res" id="3_vlf4k"]
 [ext_resource type="Shader" path="res://Skyshader.gdshader" id="5_1ulyx"]
+[ext_resource type="PackedScene" uid="uid://dr3y0425jpkes" path="res://menupausa.tscn" id="6_7wdxy"]
 [ext_resource type="ArrayMesh" uid="uid://csu70b74qtur" path="res://esenario/GodotActionRPG-Assets/Models/Environment/arbol.obj" id="6_yimpv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3k4gi"]
-albedo_color = Color(0.0767416, 0.186951, 0, 1)
+albedo_color = Color(0, 0.247059, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_udu27"]
 size = Vector2(50, 50)
@@ -149,3 +150,5 @@ shadow_blur = 0.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Ambiente"]
 environment = SubResource("Environment_uky1s")
+
+[node name="Node" parent="Ambiente" instance=ExtResource("6_7wdxy")]

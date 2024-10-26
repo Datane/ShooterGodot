@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kpduwagw88mt"
+path="res://.godot/imported/Astronaunt.obj-53e5f0a9a7a38413139413b0a804ec11.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Astronaunt.obj-53e5f0a9a7a38413139413b0a804ec11.mesh"]
+
+source_file="res://personajes/Astronaunt.obj"
+dest_files=["res://.godot/imported/Astronaunt.obj-53e5f0a9a7a38413139413b0a804ec11.mesh", "res://.godot/imported/Astronaunt.obj-53e5f0a9a7a38413139413b0a804ec11.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
