@@ -151,4 +151,4 @@ shadow_blur = 0.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Ambiente"]
 environment = SubResource("Environment_uky1s")
 
-[node name="Node" parent="Ambiente" instance=ExtResource("6_7wdxy")]
+[node name="menupausa" parent="Ambiente" instance=ExtResource("6_7wdxy")]
