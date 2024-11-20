@@ -59,13 +59,13 @@ shader_parameter/stars_scale = 1.0
 shader_parameter/stars_opacity = 1.0
 shader_parameter/overwritten_time = 0.0
 
-[sub_resource type="Sky" id="Sky_6do37"]
+[sub_resource type="Sky" id="Sky_11he6"]
 sky_material = SubResource("ShaderMaterial_p0gh6")
 
 [sub_resource type="Environment" id="Environment_uky1s"]
 background_mode = 2
 background_energy_multiplier = 1.1
-sky = SubResource("Sky_6do37")
+sky = SubResource("Sky_11he6")
 sky_rotation = Vector3(0, 6.28319, 0)
 reflected_light_source = 2
 

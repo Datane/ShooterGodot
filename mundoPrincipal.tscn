@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cicc6iha317on"]
+
+[ext_resource type="Shader" path="res://Skyshader.gdshader" id="1_17hbb"]
+[ext_resource type="PackedScene" uid="uid://dr3y0425jpkes" path="res://menupausa.tscn" id="2_mwdon"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mia6m"]
+shader = ExtResource("1_17hbb")
+shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
+shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
+shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0, 0.7, 0.8, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/sun_color = Color(10, 8, 1, 1)
+shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
+shader_parameter/sun_size = 0.2
+shader_parameter/sun_blur = 10.0
+shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/moon_size = 0.06
+shader_parameter/moon_blur = 0.1
+shader_parameter/clouds_edge_color = Color(0.8, 0.8, 0.98, 1)
+shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
+shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
+shader_parameter/clouds_speed = 2.0
+shader_parameter/clouds_direction = 0.2
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_cutoff = 0.3
+shader_parameter/clouds_fuzziness = 0.5
+shader_parameter/clouds_weight = 0.0
+shader_parameter/clouds_blur = 0.25
+shader_parameter/stars_speed = 1.0
+shader_parameter/stars_scale = 1.0
+shader_parameter/stars_opacity = 1.0
+shader_parameter/overwritten_time = 0.0
+
+[sub_resource type="Sky" id="Sky_6do37"]
+sky_material = SubResource("ShaderMaterial_mia6m")
+
+[sub_resource type="Environment" id="Environment_qwtem"]
+background_mode = 2
+background_energy_multiplier = 1.1
+sky = SubResource("Sky_6do37")
+sky_rotation = Vector3(0, 6.28319, 0)
+reflected_light_source = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ambiente" type="Node" parent="."]
+
+[node name="Sun" type="DirectionalLight3D" parent="Ambiente"]
+transform = Transform3D(-0.630434, -0.744897, -0.21836, 0.145457, -0.389685, 0.909389, -0.762493, 0.541547, 0.354021, 0, 15.8159, 0)
+light_energy = 2.772
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 3.222
+shadow_enabled = true
+shadow_bias = 10.0
+shadow_normal_bias = 10.0
+shadow_opacity = 0.95
+shadow_blur = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Ambiente"]
+environment = SubResource("Environment_qwtem")
+
+[node name="menupausa" parent="Ambiente" instance=ExtResource("2_mwdon")]

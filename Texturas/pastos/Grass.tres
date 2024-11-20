@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dhbqo7olmtnxa"]
+
+[ext_resource type="Texture2D" uid="uid://bhmkdn8r2hgoc" path="res://Texturas/pastos/Grass003_1K-JPG_Color.jpg" id="1_7xfsj"]
+[ext_resource type="Texture2D" uid="uid://bc7xtrx8jfpte" path="res://Texturas/pastos/Grass003_1K-JPG_NormalDX.jpg" id="2_nk0qp"]
+
+[resource]
+albedo_texture = ExtResource("1_7xfsj")
+roughness = 0.0
+roughness_texture = ExtResource("2_nk0qp")
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true
