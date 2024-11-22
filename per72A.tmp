@@ -11,6 +11,8 @@
 [node name="Jugador" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062783, 1.13114, -0.0646651)
 script = ExtResource("1_w48xh")
+load_distance = null
+unload_distance = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Jugador"]
 layers = 3

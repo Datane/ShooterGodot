@@ -62,7 +62,7 @@ text = "Salir al menu"
 [node name="Button4" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-text = "Salir del juego"
+text = "Salir "
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_vky0s")

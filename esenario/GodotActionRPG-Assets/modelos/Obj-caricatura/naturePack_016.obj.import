@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxuoq3eplcblw"
+path="res://.godot/imported/naturePack_016.obj-194aed91ac8086c6a9a7512d4cf6b877.mesh"
+
+[deps]
+
+files=["res://.godot/imported/naturePack_016.obj-194aed91ac8086c6a9a7512d4cf6b877.mesh"]
+
+source_file="res://esenario/GodotActionRPG-Assets/modelos/Obj-caricatura/naturePack_016.obj"
+dest_files=["res://.godot/imported/naturePack_016.obj-194aed91ac8086c6a9a7512d4cf6b877.mesh", "res://.godot/imported/naturePack_016.obj-194aed91ac8086c6a9a7512d4cf6b877.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

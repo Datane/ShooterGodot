@@ -11,7 +11,7 @@ func _on_button_pressed():
 	#funcion del delay 
 	await delay(0.5)  # Espera 2 segundos
 	#para ir a el juego
-	get_tree().change_scene_to_file("res://mundo.tscn")
+	get_tree().change_scene_to_file("res://mundoPrincipal.tscn")
 	
 
 #funcion para salir 
