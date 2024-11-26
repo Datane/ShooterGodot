@@ -15,6 +15,12 @@ var v_sensibilidad = 0.1   # Sensibilidad vertical del mouse
 
 # Variable para almacenar la posición del JUGADOR
 var player_position = Vector3.ZERO
+#variable para agarrar objetos ########
+# Constantes
+const DISTANCIA_AGARRAR_OBJETO = 2.0
+const FUERZA_LANZAR_OBJETO = 20.0
+# Variables
+var objeto_agarrado: RigidBody3D = null
 
 ######### VARIABLES PARA CARGA DEL MAPA ###########
 @export var load_distance: float = 50.0  # Distancia de carga del mapa
@@ -34,7 +40,7 @@ func _ready():
 	print("El script ha comenzado. Monitoreando la posición del jugador en 3D.")
 
 	# Recopilar nodos del mapa
-	var map_root = get_node_or_null("Map")  # Usa get_node_or_null para evitar errores
+	var map_root = get_node_or_null("res://mundoPrincipal.tscn")  # Usa get_node_or_null para evitar errores
 	if map_root:
 		collect_map_nodes(map_root)
 	else:
@@ -79,13 +85,23 @@ func handle_mouse_input(event):
 # Manejar la captura/liberación del cursor
 func _process(_delta):
 	handle_mouse_mode_toggle()
-
 	# Actualiza la posición del jugador cada frame
 	player_position = global_transform.origin
 	print("Posición del jugador: ", player_position)
-
-	# Llamar a la gestión de carga del mapa
 	handle_map_loading()
+	##############Agtarrar cosas ##############
+	if Input.is_action_just_pressed("Click_derecho"):
+		if objeto_agarrado == null:
+			agarrar_objeto()
+			print("Entro")
+		else:
+			soltar_objeto()
+			print("pepeppepepe")
+	# Si hay un objeto agarrado, actualizamos su posición
+	if objeto_agarrado:
+		mover_objeto_agarrado()
+	# Llamar a la gestión de carga del mapa
+	
 
 # Función para alternar el modo del mouse (capturado o visible)
 func handle_mouse_mode_toggle():
@@ -144,4 +160,48 @@ func handle_map_loading():
 			node.set_process(false)  # Desactivar el procesamiento de nodos cuando no son visibles
 			loaded_nodes.erase(node)
 			print("Nodo descargado:", node.name)
+			
+			
+			
+# Función para agarrar un objeto
+func agarrar_objeto():
+	var estado = get_world_3d().direct_space_state
+	var posicion_centro = get_viewport().size / 2
+	var rayo_desde = camera.project_ray_origin(posicion_centro)
+	var rayo_hasta = rayo_desde +camera.project_ray_normal(posicion_centro) * DISTANCIA_AGARRAR_OBJETO
+
+	var query = PhysicsRayQueryParameters3D.create(rayo_desde, rayo_hasta)
+	query.collide_with_areas = true
+	var resultado_del_rayo=estado.intersect_ray(query)
+	
+	if resultado_del_rayo:
+		var collider = resultado_del_rayo.collider
+		if collider is RigidBody3D:
+			objeto_agarrado = collider
+			objeto_agarrado.freeze = true
+			objeto_agarrado.freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
+			objeto_agarrado.collision_layer = 0
+			objeto_agarrado.collision_mask = 0
+			print("Objeto agarrado:", objeto_agarrado)
+
+# Función para soltar un objeto
+func soltar_objeto():
+	if objeto_agarrado:
+		objeto_agarrado.freeze = false
+		objeto_agarrado.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
+		objeto_agarrado.apply_impulse(
+			Vector3.ZERO,
+			-global_transform.basis.z.normalized() * FUERZA_LANZAR_OBJETO
+		)
+		objeto_agarrado.collision_layer = 1
+		objeto_agarrado.collision_mask = 1
+		objeto_agarrado = null
+		print("Objeto soltado")
+
+# Función para mover un objeto agarrado
+func mover_objeto_agarrado():
+	if objeto_agarrado:
+		objeto_agarrado.global_transform.origin = camera.project_ray_origin(get_viewport().size / 2) + camera.global_transform.basis.z * -DISTANCIA_AGARRAR_OBJETO
+
+	
 

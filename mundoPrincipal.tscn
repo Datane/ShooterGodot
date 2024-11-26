@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cicc6iha317on"]
+[gd_scene load_steps=26 format=3 uid="uid://cicc6iha317on"]
 
 [ext_resource type="Shader" path="res://Skyshader.gdshader" id="1_17hbb"]
 [ext_resource type="Material" uid="uid://cicbnrw3bqfpq" path="res://esenario/GodotActionRPG-Assets/modelos/Texturas/Grass/material3dgrass.tres" id="2_6nu8s"]
@@ -58,7 +58,7 @@ sky = SubResource("Sky_6do37")
 sky_rotation = Vector3(0, 6.28319, 0)
 reflected_light_source = 2
 
-[sub_resource type="Resource" id="Resource_ep8fu"]
+[sub_resource type="Resource" id="Resource_5on4f"]
 script = ExtResource("5_pcrv2")
 amount = 75
 enabled = true
@@ -67,7 +67,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_7homb"]
+[sub_resource type="Resource" id="Resource_ketjd"]
 script = ExtResource("6_3b45w")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -78,7 +78,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_h1qot"]
+[sub_resource type="Resource" id="Resource_bfsc3"]
 script = ExtResource("7_8n1nb")
 iterations = 3
 offset_step = 0.2
@@ -90,7 +90,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_s3fx6"]
+[sub_resource type="Resource" id="Resource_3c0op"]
 script = ExtResource("8_khhfy")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -106,13 +106,17 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_66khf"]
+[sub_resource type="Resource" id="Resource_t12v0"]
 script = ExtResource("4_ijv28")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_ep8fu"), SubResource("Resource_7homb"), SubResource("Resource_h1qot"), SubResource("Resource_s3fx6")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_5on4f"), SubResource("Resource_ketjd"), SubResource("Resource_bfsc3"), SubResource("Resource_3c0op")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("11_roiph")
 radius = 25.4358
+
+[sub_resource type="BoxMesh" id="BoxMesh_7d651"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ix13"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -145,7 +149,7 @@ size = Vector3(100, 1, 100)
 [node name="ProtonScatter" type="Node3D" parent="Terreno"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.93301)
 script = ExtResource("3_xi62y")
-modifier_stack = SubResource("Resource_66khf")
+modifier_stack = SubResource("Resource_t12v0")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -167,6 +171,16 @@ shape = SubResource("Resource_g8bsm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27961, -1.25638, 2.3558)
 script = ExtResource("9_boxym")
 path = "res://addons/proton_scatter/demos/assets/small_rock.tscn"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Terreno"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11353, 27.6511)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terreno/RigidBody3D"]
+mesh = SubResource("BoxMesh_7d651")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terreno/RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_8ix13")
 
 [node name="personaje" parent="." instance=ExtResource("3_lecci")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53004, -0.101227, 27.3329)
