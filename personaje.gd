@@ -204,4 +204,3 @@ func mover_objeto_agarrado():
 		objeto_agarrado.global_transform.origin = camera.project_ray_origin(get_viewport().size / 2) + camera.global_transform.basis.z * -DISTANCIA_AGARRAR_OBJETO
 
 	
-

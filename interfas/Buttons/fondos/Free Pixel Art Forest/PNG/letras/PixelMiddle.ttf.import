@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/PixelMiddle.ttf-0eb8ec4cf7fee2521909f51f2a710
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

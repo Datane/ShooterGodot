@@ -63,8 +63,8 @@ flat = true
 [node name="ExitButton" type="Button" parent="VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.152941, 0.356863, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_tx631")
 theme_override_font_sizes/font_size = 80
 text = "salir"

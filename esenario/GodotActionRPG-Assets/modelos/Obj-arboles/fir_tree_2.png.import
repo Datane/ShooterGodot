@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyk5f12vljj2b"
-path.s3tc="res://.godot/imported/fir_tree_2.png-7f4c3f7b34148858224c42d8ddad039b.s3tc.ctex"
+path.s3tc="res://.godot/imported/fir_tree_2.png-1acf888e4f67b611c8ca24a80255b218.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://esenario/Package/Obj/fir_tree_2.png"
-dest_files=["res://.godot/imported/fir_tree_2.png-7f4c3f7b34148858224c42d8ddad039b.s3tc.ctex"]
+source_file="res://esenario/GodotActionRPG-Assets/modelos/Obj-arboles/fir_tree_2.png"
+dest_files=["res://.godot/imported/fir_tree_2.png-1acf888e4f67b611c8ca24a80255b218.s3tc.ctex"]
 
 [params]
 

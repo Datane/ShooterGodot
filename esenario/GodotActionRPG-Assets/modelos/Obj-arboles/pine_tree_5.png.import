@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dug55jjujt38v"
-path.s3tc="res://.godot/imported/pine_tree_5.png-061e26009203821631fbedcd8cdaf2c8.s3tc.ctex"
+path.s3tc="res://.godot/imported/pine_tree_5.png-4ebcc9465bb8c89bd030511a1ffee0c3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://esenario/Package/Obj/pine_tree_5.png"
-dest_files=["res://.godot/imported/pine_tree_5.png-061e26009203821631fbedcd8cdaf2c8.s3tc.ctex"]
+source_file="res://esenario/GodotActionRPG-Assets/modelos/Obj-arboles/pine_tree_5.png"
+dest_files=["res://.godot/imported/pine_tree_5.png-4ebcc9465bb8c89bd030511a1ffee0c3.s3tc.ctex"]
 
 [params]
 

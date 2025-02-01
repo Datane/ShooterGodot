@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnhhp8af467vl"
-path.s3tc="res://.godot/imported/posters-ladrillo-marron-pared-textura.jpg.jpg-1d62214343a79a45a703e85d4819dda6.s3tc.ctex"
+path.s3tc="res://.godot/imported/posters-ladrillo-marron-pared-textura.jpg.jpg-d0aae45bfd9fca21393e99510bc85a33.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Texturas/posters-ladrillo-marron-pared-textura.jpg.jpg"
-dest_files=["res://.godot/imported/posters-ladrillo-marron-pared-textura.jpg.jpg-1d62214343a79a45a703e85d4819dda6.s3tc.ctex"]
+source_file="res://esenario/GodotActionRPG-Assets/modelos/Texturas/ledrillos/posters-ladrillo-marron-pared-textura.jpg.jpg"
+dest_files=["res://.godot/imported/posters-ladrillo-marron-pared-textura.jpg.jpg-d0aae45bfd9fca21393e99510bc85a33.s3tc.ctex"]
 
 [params]
 
